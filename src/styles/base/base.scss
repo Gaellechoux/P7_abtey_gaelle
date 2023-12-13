@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&family=Shrikhand&display=swap');
+
+*
+{ 
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+ }
+
+
+
+/*Polices personnalisées */
+
+
+body{
+    margin: 0px;
+    font-family: "Montserrat", sans-serif;
+}
+
+main{
+    margin-right: 28px;
+    margin-left: 28px;
+//     @media (max-width: 768px){
+//         &{ 
+//             margin-right: 0;
+//             margin-left: 0;
+//     }       
+// }
+}

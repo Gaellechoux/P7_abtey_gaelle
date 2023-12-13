@@ -1,0 +1,92 @@
+.cardContainer{ 
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+
+  @media (max-width: 768px){
+      &{ 
+      background-color: $tertiary-color; 
+      gap: 24px;   
+  }       
+}   
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 340px;
+  width: 340px;
+  background-image: linear-gradient(#FF6060 0%, #ba5b5bdc);
+ 
+  &::before {
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.4));
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  P {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    line-height: 25.67px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    z-index: 3;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    z-index: 2;
+
+    &.loader {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        transition-delay: 0s !important;
+        transition-duration: 0.15s !important ;
+        opacity: 0.8 !important;
+      }
+    }
+  }
+
+  &::after {
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.4));
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px){
+    &{ 
+    background-image: none; 
+    height: 255px;
+    width: 335px; 
+    border-radius: 12px;  
+}       
+} 
+}
+
