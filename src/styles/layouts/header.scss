@@ -19,20 +19,32 @@
                 gap: 30px;
                 font-size: 15px;
                 font-weight: 900;
-                .active {
+                .linkActive {
+                    text-decoration: underline;
+                }
+                a {
                  color: $primary-color;
-                 border-bottom: 2px solid $primary-color;
+                //  border-bottom: 2px solid $primary-color;
                  white-space: nowrap;
+                 &:hover{
+                    text-decoration: underline;
+                    // border-bottom: 2px solid $primary-color;
+                }
 
                 }
 
                 .active2{
                     color: $primary-color;
+                    border-bottom: 2px solid $primary-color;
                     &:hover{
-                        border-bottom: 2px solid $primary-color;
+                        text-decoration: underline;
+                        // border-bottom: 2px solid $primary-color;
                     }
                 }
-              
+                @media screen and (max-width: 384px) {
+                    gap: 7px;
+                    font-size: 11px;
+                  }
                 
             }
        

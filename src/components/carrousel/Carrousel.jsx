@@ -1,55 +1,59 @@
 // import React from 'react';
 import React, { useState } from "react";
-
+import left from "../../assets/flech-left.png";
+import right from "../../assets/flech-right.png";
 
 const Carrousel = ({ slides }) => {
+  const [currentPicture, setCurrentPicture] = useState(0);
+  const length = slides.length; //longueur du tableau de slides
 
-        const [current, setCurrent] = useState(0); //je définie l'index du premier slide à 0
-        const length = slides.length; //longueur du tableau de slides
-      
-        /**Function pour l'image precedente */
-        const nextImage = () => {
-          setCurrent(current === length - 1 ? 0 : current + 1); // on repart au premier slide quand on arrive au dernier
-        };
-        /**Function pour l'image suivante */
-        const prevImage = () => {
-          setCurrent(current === 0 ? length - 1 : current - 1); // on repart au dernier slide quand on est au premier
-        };
-      
-        if (!Array.isArray(slides) || slides.length <= 0) {
-          return null;
-        }
+  /**Function pour l'image precedente */
+  const nextImage = () => {
+    setCurrentPicture(currentPicture === length - 1 ? 0 : currentPicture + 1);
+  };
+  /**Function pour l'image suivante */
+  const prevImage = () => {
+    setCurrentPicture(currentPicture === 0 ? length - 1 : currentPicture - 1);
+  };
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+  return (
+    <section className="slide">
+      {length > 1 && (
+        <p className="left-Arrow" onClick={prevImage}>
+          <img
+            src={left} //Affichage des flèches seulement si length > 1
+            alt="gauche"
+            className="leftArrow"
+          />
+        </p>
+      )}
+      {length > 1 && (
+        <p className="right-Arrow" onClick={nextImage}>
+          <img src={right} alt="droite" className="rightArrow" />
+        </p>
+      )}
+      {slides.map((image, index) => {
         return (
-          <section className="slide">
-            {length > 1 && (
-              <p className="left-Arrow" onClick={prevImage}>
-                <i className="fas fa-chevron-right"></i>
-              </p>
+          <div
+            key={index}
+            className={index === currentPicture ? "slider active" : "slider"}
+          >
+            {index === currentPicture && (
+              <img src={image} alt="img-appart" className="slide__img" />
             )}
-            {length > 1 && (
-              <p className="right-Arrow" onClick={nextImage}>
-                <i className="fas fa-chevron-left"></i>
-              </p>
+            {index === currentPicture && length > 1 && (
+              <span className="slider__number">
+                {currentPicture + 1}/{length}
+              </span>
             )}
-            {slides.map((image, index) => {
-              return (
-                <div
-                  key={index}
-                  className={index === current ? "slider active" : "slider"}
-                >
-                  {index === current && (
-                    <img src={image} alt="img-appartement" className="slide__image" />
-                  )}
-                  {index === current && length > 1 && (
-                    <span className="slider__number">
-                      {current + 1}/{length}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
-          </section>
-    );
+          </div>
+        );
+      })}
+    </section>
+  );
 };
 
 export default Carrousel;

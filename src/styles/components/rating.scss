@@ -1,13 +1,25 @@
 .rating {
     display: flex;
     justify-content: space-between;
-    width: 98px;
-    height: 18px;
-    margin-top: 24px;
+    gap: 10px;
+     
+   & img{
+        object-fit: cover;
+        @media (max-width: 768px) {
+            width: 21px;
+           height: 23px;
+        }
+
+        @media (max-width: 325px) {
+            width: 15px;
+            height: 17px;
+          }
+    
+    }
+
 
     @media (max-width: 768px) {
-        width: 196px;
-        height: 36px;
+        gap: 7px;
     }
 }
 
@@ -16,9 +28,7 @@
     align-items: flex-start;
 }
 
-.etoile {
-    width: 15px;
-    height: 15px;
+.etoile--active {
 
     @media (max-width: 768px) {
         width: 30px;

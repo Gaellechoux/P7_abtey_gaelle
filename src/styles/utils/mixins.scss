@@ -44,12 +44,10 @@
             }   
 }
 
-@mixin carrousel-style {
+@mixin carrousel-Arrow {
     display: flex;
-    // position: absolute;
     font-size: 55px;
-    top: 42%;
-    /* right: 2%; */
+    // top: 42%;
     width: 46px;
     height: 86px;
     z-index: 10;
@@ -58,13 +56,19 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     color: $tertiary-color;
-
-    // display: flex;
-    // position: absolute;
-    // top: 47%;
-    // left: 2%;
-    // width: 12px;
-    // height: 20px;
-    // z-index: 10;
-    // cursor: pointer;
+    
  }
+
+ @mixin carrousel-left {
+    display: flex;
+    font-size: 55px;
+    top: 42%;
+    width: 46px;
+    height: 86px;
+    z-index: 10;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    color: #FFFFFF;
+ }
+

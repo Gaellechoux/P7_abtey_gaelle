@@ -1,0 +1,55 @@
+.rate-host-container{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (max-width: 768px) {
+        
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;   
+        gap: 40px;
+       
+    }
+
+    @media screen and (max-width: 384px) {
+        gap: 22px;
+      }
+
+}
+.host{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: center;
+    text-align: right;
+    width: 92%;
+    @media (max-width: 768px) {
+     width: 48%;
+       
+    }
+
+    @media screen and (max-width: 384px) {
+        gap: 0;
+      }
+  
+}
+   
+    .host__Picture{
+        border-radius: 50%;
+        height: 64px;
+        opacity: 1;
+        overflow: hidden;
+        width: 64px;
+  
+
+    img{
+        min-height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+
+  }

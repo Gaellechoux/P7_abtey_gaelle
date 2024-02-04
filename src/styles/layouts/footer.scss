@@ -3,4 +3,8 @@
     color: white;
     text-align: center;
     padding: 60px 30px 30px;
+    @media (max-width: 820px){
+        margin-top: 197px;
+        height: 229px;
+    }   
 }

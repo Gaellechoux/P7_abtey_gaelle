@@ -1,18 +1,40 @@
-import { Link } from 'react-router-dom';
-import Logo from  '../../assets/LOGO (1).png';
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/LOGO (1).png";
 
 const Header = () => {
-    return (
-        <header className='header'>
-         <div className='header__logo'>
-         <img src={Logo} alt='Logo de agence kasa'/>
-         </div>
-          <nav className='header__navbar'> 
-            <Link to='/' className='active'>ACCUEIL</Link>
-            <Link to='/about' className='active2'>A PROPOS</Link>
-          </nav>
-        </header>
-    );
+  // permet de localiser le lien
+  const location = useLocation();
+
+  const [homeActive, setHomeActive] = useState(false);
+  const [aboutActive, setAboutActive] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setHomeActive(true);
+    } else if (location.pathname === "/about") {
+      setAboutActive(true);
+    }
+  });
+
+  return (
+    <header className="header">
+      <Link to="/">
+        <div className="header__logo">
+          <img src={Logo} alt="Logo de agence kasa" />
+        </div>
+      </Link>
+      <nav className="header__navbar">
+        <Link className={homeActive ? "linkActive" : ""} to="/">
+          Accueil
+        </Link>
+        <Link className={aboutActive ? "linkActive" : ""} to="/about">
+          A Propos
+        </Link>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

@@ -1,7 +1,121 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $primary-color;
+	font-weight: 900;
+	@media (max-width: 768px) {
+        display: contents; 
+       
+    }
+
+	
+}
 .informations{
     color: $primary-color;
 }
 
-.informations__description{
+.informations__title{
+	align-items: center;
     color: $primary-color;
+}
+
+.informations__about{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+        
+        // margin-bottom: 129px;
+        padding: 0;
+        align-items: center;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+       
+    }
+}
+
+.informations {
+	width: 100%;
+	margin: 20px 0;
+
+	@media screen and (min-width: 768px) {
+		margin: 31px auto 0;
+	}
+
+	&__title {
+		background: $primary-color;
+		color: $tertiary-color;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 30px;
+		padding: 7px 15px;
+		border-radius: 5px;
+		width: 100%;
+        font-size: x-large;
+        position: relative;
+        img{
+            transition: 0.4s ease-in-out;
+        }    
+
+		@media(max-width: 768px) {
+			height: 47px;
+		}
+
+		h2 {
+			@include font(24px, 900);
+
+			@media screen and (min-width: 768px) {
+				
+			}
+		}
+	}
+
+	&__content {
+		color: $primary-color;
+		background: #f7f7f7;
+		border-radius: 5px;
+        margin-top: -3px;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height 500ms;
+		// transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
+         ul{
+            font-weight: 900;
+		 }
+		p {
+			margin: 0;
+			padding: 22px 15px;
+			pointer-events: none;
+            font-size: 18px;
+            font-weight: 600;
+			
+
+			@media screen and (min-width: 768px) {
+				
+			}
+		}
+	}
+}
+
+.informations__content-description {
+	opacity: 1;
+	transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out;
+}
+
+
+.informations__title--active {
+    img {
+        transform: rotate(-180deg);
+    }
+}
+
+.informations__content--active {
+    max-height: 500px;
 }
