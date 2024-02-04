@@ -11,6 +11,7 @@ import LogementData from "../../data/logements.json";
 import ErrorPage from "../../components/error/ErrorPage";
 
 const Logement = () => {
+  // Récupère le paramètre userId à partir de l'URL.
   const { id } = useParams();
   const ficheLogement = LogementData.find((logements) => logements.id === id);
 
