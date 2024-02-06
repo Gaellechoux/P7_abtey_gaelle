@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "../../components/Header/header";
 import AboutBanner from "../../components/aboutBanner/AboutBanner";
-import Footer from "../../components/footer/Footer";
 import Collapse from "../../components/collapse/Collapse";
 import AboutData from "../../data/about.json";
 const About = () => {
   return (
     <>
-      <Header />
       <main>
         <AboutBanner />
         <div className="collapse__about">
@@ -21,7 +18,6 @@ const About = () => {
           ))}
         </div>
       </main>
-      <Footer />
     </>
   );
 };

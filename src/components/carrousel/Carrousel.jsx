@@ -4,6 +4,7 @@ import left from "../../assets/flech-left.png";
 import right from "../../assets/flech-right.png";
 
 const Carrousel = ({ slides }) => {
+  // je definis le state du currentPicture (et O par défaut)
   const [currentPicture, setCurrentPicture] = useState(0);
   const length = slides.length; //longueur du tableau de slides
 
@@ -24,7 +25,7 @@ const Carrousel = ({ slides }) => {
       {length > 1 && (
         <p className="left-Arrow" onClick={prevImage}>
           <img
-            src={left} //Affichage des flèches seulement si length > 1
+            src={left} 
             alt="gauche"
             className="leftArrow"
           />

@@ -1,12 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Header from "../../components/Header/header";
 import Carrousel from "../../components/carrousel/Carrousel";
 import Tag from "../../components/tag/Tags";
 import Host from "../../components/host/Host";
 import Rating from "../../components/rating/Rating";
 import Informations from "../../components/informations/Informations";
-import Footer from "../../components/footer/Footer";
 import LogementData from "../../data/logements.json";
 import ErrorPage from "../../components/error/ErrorPage";
 
@@ -18,15 +16,12 @@ const Logement = () => {
   if (ficheLogement === undefined) {
     return (
       <>
-        <Header />
         <ErrorPage />
-        <Footer />
       </>
     );
   } else {
     return (
       <div className="logement">
-        <Header />
         <main>
           <Carrousel slides={ficheLogement.pictures} />
           {/* <div className= "carrousel">
@@ -75,7 +70,6 @@ const Logement = () => {
             />
           </div>
         </main>
-        <Footer />
       </div>
     );
   }

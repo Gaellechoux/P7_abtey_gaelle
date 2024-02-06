@@ -6,7 +6,7 @@ import Logo from "../../assets/LOGO (1).png";
 const Header = () => {
   // permet de localiser le lien
   const location = useLocation();
-
+ // je definis le state homeActive et aboutActive (et false par défaut)
   const [homeActive, setHomeActive] = useState(false);
   const [aboutActive, setAboutActive] = useState(false);
 

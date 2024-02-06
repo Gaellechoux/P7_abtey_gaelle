@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import Chevron from "../../assets/Vector.png";
 
 const Collapse = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  // je definis le state du isOpen (et false par défaut)
+  const [isOpen, setIsOpen] = useState(false); 
 
+ //je définis la fonction isOpenState qui modifie la valeur isOpen au clic
   const isOpenState = () => {
     setIsOpen(!isOpen);
   };
 
+  // J'affiche le collapse replié par défaut et l'ouvre au clic puis le referme au clic en faisant disparaitre le texte
   return (
     <div className="collapse">
       <div

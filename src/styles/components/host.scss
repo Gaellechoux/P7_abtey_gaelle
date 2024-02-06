@@ -2,15 +2,14 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 15px;
 
     @media (max-width: 768px) {
-        
         align-items: center;
         display: flex;
         flex-direction: row-reverse;   
         gap: 40px;
-       
     }
 
     @media screen and (max-width: 384px) {
@@ -20,23 +19,23 @@
 }
 .host{
     align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 15px;
     justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
     text-align: right;
-    width: 92%;
-    @media (max-width: 768px) {
-     width: 48%;
-       
+    margin-top: 20px;
+    @media screen and (max-width: 768px) {
+        margin-top: 0;
     }
-
-    @media screen and (max-width: 384px) {
-        gap: 0;
-      }
-  
 }
+
+    .host__name {
+        font-size: 18px;
+        @media screen and (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
    
     .host__Picture{
         border-radius: 50%;
@@ -44,7 +43,10 @@
         opacity: 1;
         overflow: hidden;
         width: 64px;
-  
+        @media screen and (max-width: 768px) {
+            height: 32px;
+            width: 32px;
+        }
 
     img{
         min-height: 100%;
