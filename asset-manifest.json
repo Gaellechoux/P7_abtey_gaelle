@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/P7_abtey_gaelle/static/css/main.745a80b4.css",
+    "main.js": "/P7_abtey_gaelle/static/js/main.66b875cc.js",
+    "static/media/image_about.png": "/P7_abtey_gaelle/static/media/image_about.abab3f12f4cb82f1dfa1.png",
+    "static/media/IMG.png": "/P7_abtey_gaelle/static/media/IMG.d00ae7dd3ef927bb988d.png",
+    "index.html": "/P7_abtey_gaelle/index.html",
+    "main.745a80b4.css.map": "/P7_abtey_gaelle/static/css/main.745a80b4.css.map",
+    "main.66b875cc.js.map": "/P7_abtey_gaelle/static/js/main.66b875cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.745a80b4.css",
+    "static/js/main.66b875cc.js"
+  ]
+}
